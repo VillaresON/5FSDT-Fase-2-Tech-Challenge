@@ -1,4 +1,4 @@
-const PostController = require('../controllers/postController.js');
+const PostController = require('../controllers/PostController.js');
 const postController = new PostController();
 const { Router } = require('express');
 const routes = Router();

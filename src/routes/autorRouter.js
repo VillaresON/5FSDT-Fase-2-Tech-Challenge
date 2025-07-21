@@ -1,4 +1,4 @@
-const AutorController = require('../controllers/autorController.js');
+const AutorController = require('../controllers/AutorController.js');
 const autorController = new AutorController();
 const { Router } = require('express');
 const routes = Router();
