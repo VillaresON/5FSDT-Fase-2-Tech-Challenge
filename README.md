@@ -78,8 +78,8 @@ O sistema é dividido em duas camadas principais:
   ├── /models
   ├── /services
   ├── /middlewares
-  └── /config
-app.js
+  ├── /config
+  └── app.js
 server.js
 ```
 
