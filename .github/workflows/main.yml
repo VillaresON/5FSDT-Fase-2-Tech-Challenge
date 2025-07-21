@@ -16,4 +16,4 @@ jobs:
       
       - name: Run tests with jest nodejs
         run: |
-          docker run --rm techchallenge:latest npm test
+          docker run --rm techchallenge:latest npm run test
