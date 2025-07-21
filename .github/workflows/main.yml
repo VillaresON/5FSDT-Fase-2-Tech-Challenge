@@ -2,24 +2,18 @@ name: Projeto Tech-Challenge
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
-      pull-requests: write
-      
     steps:
       - uses: actions/checkout@v3
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag techchallenge:latest
       - name: Run tests
         run: docker run --rm techchallenge:latest npm test
-        permissions:
-          contents: read
-          id-token: write
