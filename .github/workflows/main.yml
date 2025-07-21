@@ -18,4 +18,4 @@ jobs:
       - name: permission to run testes
         run: chmod +x node_modules/.bin/jest
       - name: Run tests
-        run: docker run --rm techchallenge:latest npx jest
+        run: sudo docker run --rm techchallenge:latest npx jest
