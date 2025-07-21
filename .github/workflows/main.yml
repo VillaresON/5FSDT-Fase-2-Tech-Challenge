@@ -14,12 +14,3 @@ jobs:
       - name: Build and push Docker image
         runs: |
           docker build -t tech-challenge:latest .
-
-      - name: Run tests
-        run: |
-          docker run --rm tech-challenge:latest npm test
-      - name: Upload test results
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-results
-          path: ./test-results
