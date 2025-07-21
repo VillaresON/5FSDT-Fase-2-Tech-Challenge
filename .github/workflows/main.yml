@@ -14,4 +14,4 @@ jobs:
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag techchallenge:latest
       - name: Run tests
-        run: docker run --rm techchallenge:latest sudo npm run test
+        run: docker run --rm techchallenge:latest npm test
