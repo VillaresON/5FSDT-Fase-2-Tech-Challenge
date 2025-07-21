@@ -16,6 +16,6 @@ jobs:
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag techchallenge:latest
       - name: permission to run testes
-        run: chmod +x ./src/tests/api.test.js
+        run: chmod +x node_modules/.bin/jest
       - name: Run tests
         run: docker run --rm techchallenge:latest npm test
