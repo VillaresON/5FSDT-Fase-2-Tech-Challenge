@@ -20,7 +20,7 @@ Plataforma onde professores podem postar suas aulas e transmitir conhecimento de
 1. **Clonar o repositório:**
 
    ```bash
-   git clone https://github.com/VillaresON/5FSDT-Fase-2-Tech-Challenge
+   git clone https://github.com/VillaresON/5FSDT-Fase-2-Tech-Challenge.git
    ```
 
 2. **Configurar variáveis de ambiente:**
