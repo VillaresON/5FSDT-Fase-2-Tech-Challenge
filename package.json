@@ -1,0 +1,21 @@
+{
+  "name": "tech-challenger",
+  "version": "1.0.0",
+  "description": "Sistema de postagem de conteudos para alunos e professores",
+  "main": "index.js",
+  "scripts": {
+  "dev": "nodemon server.js",
+  "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "5.1.0",
+    "nodemon": "3.1.10",
+    "sequelize": "6.37.7",
+    "sequelize-cli": "6.6.3",
+    "sqlite3": "5.1.7"
+  }
+}
