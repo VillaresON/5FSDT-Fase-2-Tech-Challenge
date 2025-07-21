@@ -13,11 +13,5 @@ jobs:
       - uses: actions/checkout@v3
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag techchallenge:latest
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      - name: Install dependencies
-        run: npm install
       - name: Run tests
-        run: sudo npm run test
+        run: docker run --rm techchallenge:latest sudo npm run test
