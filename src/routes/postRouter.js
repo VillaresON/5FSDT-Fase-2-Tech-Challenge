@@ -37,7 +37,7 @@ const routes = Router();
  *                     format: date-time
  *                   updatedAt:
  *                     type: string
- *                   format: date-time
+ *                     format: date-time
  */
 
 routes.get('/posts', (req, res) => postController.PegarTodosOsDados(req, res));
