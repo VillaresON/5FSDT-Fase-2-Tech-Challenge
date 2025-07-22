@@ -11,6 +11,8 @@ routes.put('/posts/:id', (req, res) => postController.AtualizarDados(req, res));
 routes.delete('/posts/:id', (req, res) => postController.DeletarDados(req, res));
 routes.get('/posts/search/:titulo', (req, res) => postController.PegarDadosPorTitulo(req, res));
 
+
+
 /**
  * @swagger
  * /posts:
@@ -33,6 +35,9 @@ routes.get('/posts/search/:titulo', (req, res) => postController.PegarDadosPorTi
  *                   conteudo:
  *                     type: string
  *                     example: "Aprenda os fundamentos da programação em JavaScript."
+ *                   autor_id:
+ *                     type: integer
+ *                     example: 1
  */
 
 
