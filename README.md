@@ -35,6 +35,7 @@ Plataforma onde professores podem postar suas aulas e transmitir conhecimento de
 
    ```bash
    npm install
+   npx sequelize-cli db:migrate
    npm run start
    ```
 
