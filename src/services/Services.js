@@ -30,7 +30,7 @@ class Services {
                 include: [{
                     model: dataResource.Post,
                     as: 'posts',
-                    attributes: ['titulo'], // Inclui apenas o título do post
+                    attributes: ['titulo', 'conteudo'], // Inclui apenas o título e conteúdo do post
                     required: true, // Garante que apenas autores com posts sejam retornados
                 }],
                 order: [['id', 'ASC']],

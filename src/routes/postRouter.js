@@ -3,6 +3,13 @@ const postController = new PostController();
 const { Router } = require('express');
 const routes = Router();
 
+routes.get('/posts', (req, res) => postController.PegarTodosOsDados(req, res));
+routes.get('/posts/autores', (req, res) => postController.PegarDadosComAutores(req, res));
+routes.post('/posts', (req, res) => postController.CriarDados(req, res));
+routes.get('/posts/:id', (req, res) => postController.PegarDadosPorId(req, res));
+routes.put('/posts/:id', (req, res) => postController.AtualizarDados(req, res));
+routes.delete('/posts/:id', (req, res) => postController.DeletarDados(req, res));
+routes.get('/posts/search/:titulo', (req, res) => postController.PegarDadosPorTitulo(req, res));
 
 /**
  * @swagger
@@ -40,8 +47,6 @@ const routes = Router();
  *                     format: date-time
  */
 
-routes.get('/posts', (req, res) => postController.PegarTodosOsDados(req, res));
-
 /**
  * @swagger
  * /posts/autores:
@@ -71,7 +76,7 @@ routes.get('/posts', (req, res) => postController.PegarTodosOsDados(req, res));
  *                         type: string
  *                         example: "João da Silva"
  */
-routes.get('/posts/autores', (req, res) => postController.PegarDadosComAutores(req, res));
+
 
 /**
  * @swagger
@@ -105,7 +110,7 @@ routes.get('/posts/autores', (req, res) => postController.PegarDadosComAutores(r
  *       400:
  *         description: Erro na validação dos dados
  */
-routes.post('/posts', (req, res) => postController.CriarDados(req, res));
+
 /**
  * @swagger
  * /posts/{id}:
@@ -148,7 +153,7 @@ routes.post('/posts', (req, res) => postController.CriarDados(req, res));
  *       404:
  *         description: Post não encontrado
  */
-routes.get('/posts/:id', (req, res) => postController.PegarDadosPorId(req, res));
+
 /**
  * @swagger
  * /posts/{id}:
@@ -179,7 +184,7 @@ routes.get('/posts/:id', (req, res) => postController.PegarDadosPorId(req, res))
  *       200:
  *         description: Post atualizado com sucesso
  */
-routes.put('/posts/:id', (req, res) => postController.AtualizarDados(req, res));
+
 /**
  * @swagger
  * /posts/{id}:
@@ -197,7 +202,7 @@ routes.put('/posts/:id', (req, res) => postController.AtualizarDados(req, res));
  *       200:
  *         description: Post deletado com sucesso
  */
-routes.delete('/posts/:id', (req, res) => postController.DeletarDados(req, res));
+
 /**
  * @swagger
  * /posts/search/{titulo}:
@@ -218,13 +223,28 @@ routes.delete('/posts/:id', (req, res) => postController.DeletarDados(req, res))
  *           application/json:
  *             schema:
  *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   id:
+ *                     type: integer
+ *                     example: 1
+ *                   titulo:
+ *                     type: string
+ *                     example: "Programação em JavaScript"
+ *                   conteudo:
+ *                     type: string
+ *                     example: "Aprenda os fundamentos da programação em JavaScript."
+ *                   autor_id:
+ *                     type: integer
+ *                     example: 1
+ *                   createdAt:
+ *                     type: string
+ *                     format: date-time
+ *                   updatedAt:
+ *                     type: string
+ *                     format: date-time
  */
-routes.get('/posts/search/:titulo', (req, res) => postController.PegarDadosPorTitulo(req, res));
-
-
-
-
-
 
 module.exports = routes;
 
