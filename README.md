@@ -1,5 +1,5 @@
 
-# 📚 [Apenas Back-End] Plataforma de Aulas para Professores e Alunos
+# 📚 [Backend] Plataforma de Aulas para Professores e Alunos
 
 Plataforma onde professores podem postar suas aulas e transmitir conhecimento de forma prática, centralizada e tecnológica.
 
