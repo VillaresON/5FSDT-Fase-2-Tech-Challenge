@@ -42,11 +42,11 @@ Plataforma onde professores podem postar suas aulas e transmitir conhecimento de
 4. **(Opcional) Rodar com Docker:**
 
    ```bash
-   # Build da imagem
-   docker build . --file Dockerfile --tag techchallenge:latest
+   # Baixando a imagem
+   docker pull villares/tech-challenge:latest
 
    # Executar o container
-   docker run --name TechChallenge -p 3000:3000 techchallenge:latest
+   docker run --name TechChallenge -p 3000:3000 villares/tech-challenge:latest
    ```
 
 ---
@@ -123,5 +123,6 @@ npx jest
 ## 📎 5. Anexos e Referências
 
 - [🔗 Link para Swagger](http://localhost:3000/api-docs)
+- [Link Repositório DockerHub](https://hub.docker.com/repository/docker/villares/tech-challenge/general)
 
 ---
