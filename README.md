@@ -77,7 +77,6 @@ O sistema é dividido em duas camadas principais:
   ├── /routes
   ├── /models
   ├── /services
-  ├── /middlewares
   ├── /config
   └── app.js
 server.js
