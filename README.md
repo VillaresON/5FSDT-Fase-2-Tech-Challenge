@@ -1,5 +1,5 @@
 
-# 📚 Plataforma de Aulas para Professores e Alunos
+# 📚 [Backend] Plataforma de Aulas para Professores e Alunos
 
 Plataforma onde professores podem postar suas aulas e transmitir conhecimento de forma prática, centralizada e tecnológica.
 
@@ -122,7 +122,7 @@ npx jest
 
 ## 📎 5. Anexos e Referências
 
-- [🔗 Link para Swagger](http://localhost:3000/api-docs)
-- [Link Repositório DockerHub](https://hub.docker.com/repository/docker/villares/tech-challenge/general)
+- [🔗 Swagger](http://localhost:3000/api-docs)
+- [🔗 DockerHub](https://hub.docker.com/repository/docker/villares/tech-challenge/tags/latest/sha256-fa179b64025b71da37689dfb941c4ddf90e625a438c014239f9c045b0a6c4312)
 
 ---
