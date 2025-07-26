@@ -29,7 +29,7 @@ describe('Testando Rotas da API', () => {
     });
 
     it('POST /posts - Deve criar um novo post', async () => {
-        const newPost = { titulo: 'Novo Post', conteudo: 'Conteúdo do novo post', autor_id: 2 };
+        const newPost = { titulo: 'Novo Post', conteudo: 'Conteúdo do novo post', autor_id: 1 };
         const response = await request(app).post('/posts').send(newPost);
         expect(response.statusCode).toBe(201);
         expect(response.body.titulo).toBe(newPost.titulo);
