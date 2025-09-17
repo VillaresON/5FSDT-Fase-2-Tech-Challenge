@@ -1,20 +1,21 @@
-// models/User.js (formato compatível com sequelize-cli)
+'use strict';
+
 module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define("User", {
+  const User = sequelize.define('User', {
     nome: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false
     },
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
       unique: true,
+      allowNull: false
     },
     senha: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-  });
+      allowNull: false
+    }
+  }, {});
 
   return User;
 };

@@ -4,7 +4,7 @@ const app = express();
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('../swagger.js');
 const cors = require('cors');
-const user = require("./models/user");
+const user = require("./models/User.js");
 const authRoutes = require("./routes/auth");
 const sequelize = require("./database");
 
@@ -14,6 +14,7 @@ const corsOptions = {
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Especifique os métodos HTTP permitidos
 };
 app.use(cors(corsOptions));
+app.use(express.json());
 app.use("/auth", authRoutes);
 routes(app);
 

@@ -1,7 +1,7 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const User = require("../models/user");
+const { User } = require('../models'); 
 
 const router = express.Router();
 const SECRET = "segredo_super_secreto"; // troque em produção
@@ -17,7 +17,7 @@ router.post("/register", async (req, res) => {
 
     res.json({ message: "Usuário registrado com sucesso!", user });
   } catch (err) {
-    res.status(400).json({ error: "Erro ao registrar usuário", details: err });
+    res.status(400).json({ error: "Erro ao registrar usuário", details: err.message });
   }
 });
 
