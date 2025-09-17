@@ -15,7 +15,7 @@ class Services {
                     required: true, // Garante que apenas posts com autores sejam retornados
                 }],
                 order: [['id', 'ASC']],
-                attributes: ['titulo', 'conteudo'] // Inclui apenas os atributos necessários do post
+                attributes: ['id','titulo', 'conteudo'] // Inclui apenas os atributos necessários do post
             })
         } catch (error) {
             console.error('Erro ao acessar dados do modelo:', error)
@@ -30,7 +30,7 @@ class Services {
                 include: [{
                     model: dataResource.Post,
                     as: 'posts',
-                    attributes: ['titulo', 'conteudo'], // Inclui apenas o título e conteúdo do post
+                    attributes: ['id','titulo', 'conteudo'], // Inclui apenas o título e conteúdo do post
                     required: true, // Garante que apenas autores com posts sejam retornados
                 }],
                 order: [['id', 'ASC']],
@@ -53,13 +53,20 @@ class Services {
         }
     }
     async getById(id) {
-        try {
-            return dataResource[this.model].findByPk(id)
-        } catch (error) {
-            console.error('Erro ao acessar dados do modelo:', error)
-            throw error
-        }
+    try {
+        return dataResource[this.model].findByPk(id, {
+            include: [{
+                model: dataResource.Autor,
+                as: 'autor',
+                attributes: ['nome'], // só o nome do autor
+                required: true
+            }]
+        })
+    } catch (error) {
+        console.error('Erro ao acessar dados do modelo:', error)
+        throw error
     }
+}
     async create(data) {
         try {
             return dataResource[this.model].create(data)
@@ -91,23 +98,39 @@ class Services {
     async getTitle(titulo) {
         try {
             return dataResource[this.model].findOne({
-                 where: { titulo: { [dataResource.Sequelize.Op.like]: `%${titulo}%` } }
-            })
-        } catch (error) {
-            console.error('Erro ao acessar dados do modelo:', error)
-            throw error
-        }
+                 where: { titulo: { [dataResource.Sequelize.Op.like]: `%${titulo}%` } },
+            include: [{
+                model: dataResource.Autor,
+                as: 'autor',
+                attributes: ['nome'], // só o nome do autor
+                required: true
+            }],
+            order: [['id', 'ASC']],
+            attributes: ['id', 'titulo', 'conteudo'] // apenas campos necessários do post
+        })
+    } catch (error) {
+        console.error('Erro ao acessar dados do modelo:', error)
+        throw error
     }
+}
     async getByName(nome) {
         try {
             return dataResource[this.model].findAll({
-                where: { nome: { [dataResource.Sequelize.Op.like]: `%${nome}%` } }
-            })
-        } catch (error) {
-            console.error('Erro ao acessar dados do modelo:', error)
-            throw error
-        }
+                where: { nome: { [dataResource.Sequelize.Op.like]: `%${nome}%` } },
+            include: [{
+                model: dataResource.Autor,
+                as: 'autor',
+                attributes: ['nome'], // só o nome do autor
+                required: true
+            }],
+            order: [['id', 'ASC']],
+            attributes: ['id', 'titulo', 'conteudo'] // apenas campos necessários do post
+        })
+    } catch (error) {
+        console.error('Erro ao acessar dados do modelo:', error)
+        throw error
     }
+}
 }
 
 module.exports = Services
