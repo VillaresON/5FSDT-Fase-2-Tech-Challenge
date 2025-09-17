@@ -4,9 +4,7 @@ const app = express();
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('../swagger.js');
 const cors = require('cors');
-const user = require("./models/User.js");
 const authRoutes = require("./routes/auth");
-const sequelize = require("./database");
 
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 const corsOptions = {
